@@ -3,13 +3,13 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 1s linear;
   }
 }
 
@@ -30,9 +30,176 @@
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(-1deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(1deg);
   }
+}
+
+.Pass{
+  text-shadow:1px 1px 0 rgb(223,223,223),2px 2px 0 rgb(191,191,191),3px 3px 0 rgb(159,159,159),4px 4px 0 rgb(128,128,128),5px 5px 0 rgb(96,96,96),6px 6px 0 rgb(64,64,64),7px 7px 0 rgb(32,32,32),8px 8px 1px rgba(0,0,0,1);
+-webkit-text-shadow:1px 1px 0 rgb(223,223,223),2px 2px 0 rgb(191,191,191),3px 3px 0 rgb(159,159,159),4px 4px 0 rgb(128,128,128),5px 5px 0 rgb(96,96,96),6px 6px 0 rgb(64,64,64),7px 7px 0 rgb(32,32,32),8px 8px 1px rgba(0,0,0,1);
+-moz-text-shadow:1px 1px 0 rgb(223,223,223),2px 2px 0 rgb(191,191,191),3px 3px 0 rgb(159,159,159),4px 4px 0 rgb(128,128,128),5px 5px 0 rgb(96,96,96),6px 6px 0 rgb(64,64,64),7px 7px 0 rgb(32,32,32),8px 8px 1px rgba(0,0,0,1);
+color:#ffffff;
+font-size:55px;
+font-family:Verdana, Geneva, sans-serif;
+}
+
+.third {
+  border-color: #3498db;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.third:hover {
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
+
+.btn {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  /*border: 2px solid #e74c3c;*/
+  border-radius: 0.6em;
+ /* color: #e74c3c;*/
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.btn:hover, .btn:focus {
+  color: #fff;
+  outline: 0;
+}
+
+.cond{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 28px;
+  margin: 0;
+}
+.cond.t {
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 50px;
+  margin: 0 0 40px 120px;
+  
+}
+.checkbox {
+  margin-bottom: 0.2em;
+}
+
+/* для элемента input c type="checkbox" */
+.custom-checkbox>input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox>span {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox>span::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+  border-color: #b3d7ff;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox>input:not(:disabled):active+span::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox>input:focus+span::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox>input:focus:not(:checked)+span::before {
+  border-color: #80bdff;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox>input:checked+span::before {
+  border-color: #0b76ef;
+  background-color: #0b76ef;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox>input:disabled+span::before {
+  background-color: #e9ecef;
+}
+
+p.Passcopy {
+  color: bisque;
+  font-size: 40px;
+  margin: 0 0 20px 0;
+  display: block;
+  cursor: pointer;
+}
+p.Pass {
+  margin: 8px;
+  
+}
+.btn.third{
+  margin: 0;
+}
+.cond.t > input {
+  color: #6e27b1;
+    font-size: 27px;
+    width: 55px;
+    height: 29px;
+    padding: 3px 0 0 3px;
+    margin: 0;
+    position: relative;
+    top: 28px;
+    left: 6px;
+    background-color: bisque;
+}
+.CopyToClip {
+  font-size: 20px;
+  color: brown;
+  height: 35px;
+  margin: 0;
+  padding: 0;
 }

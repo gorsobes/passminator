@@ -170,12 +170,29 @@ font-family:Verdana, Geneva, sans-serif;
   background-color: #e9ecef;
 }
 
-p.Passcopy {
+.Passcopy {
   color: bisque;
   font-size: 40px;
   margin: 0 0 20px 0;
   display: block;
   cursor: pointer;
+  width: 354px;
+  height: 55px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  word-break: break-all;
+  border: 2px solid #369;
+  padding: 10px;
+ 
+}
+
+::-webkit-scrollbar-thumb { 
+	border-radius: 2px; /*Закругление ползунка*/
+	background-color: #b61616; /*Цвет ползунка*/
+} 
+::-webkit-scrollbar { 
+	width: 10px;  /*Толщина скролла*/
+
 }
 p.Pass {
   margin: 8px;

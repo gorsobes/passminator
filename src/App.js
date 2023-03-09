@@ -64,24 +64,24 @@ const handleKeyDown = event => {
 const handleSelect = (e) => {
   e.target.select();
 };
+let flag = '*****'
 const useCopyToClipboard = (e) => {
   const el = e.target;
+  if(el.innerHTML == flag ) return 0
+
   navigator.clipboard.writeText(el.innerHTML)
-  
-  .then(() => {
-      
+  .then(() => {  
       if(document.querySelector('.CopyToClip').innerHTML == 'скопировано'){
         document.querySelector('.CopyToClip').innerHTML = ''
       }else{
         document.querySelector('.CopyToClip').innerHTML += 'скопировано'
       }
-
   })
   .catch(err =>{
     console.log(err);
   })
+  flag = el.innerHTML
 };
-
   return (
     <div className="App">
       <header className="App-header">
@@ -120,9 +120,9 @@ const useCopyToClipboard = (e) => {
     onClick={handleSelect} 
     />
       </div>
-        <p className='Passcopy' onClick={useCopyToClipboard} >{pass}</p>
+      
+        <div className='Passcopy' onClick={useCopyToClipboard}>{pass}</div>
         <div className='CopyToClip'></div>
-
         <button className="btn third" onClick={handleSubmit}>СОЗДАТЬ ПАРОЛЬ</button>
       </header>
      
